@@ -20,7 +20,8 @@ export class RegisterComponent {
       return;
     }
     const { username, password } = this.form.value;
-
+    this.userService.register(username!, password!)
+    .subscribe()
     this.form.reset();
 
   }

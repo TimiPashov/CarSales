@@ -9,9 +9,10 @@ export class UserService {
   constructor(private http: HttpClient) { }
 
   register(username: string, password: string) {
-    return this.http.post('http://localhost:3000/register', {
+  
+    return this.http.post('http://localhost:3000/auth/register', {
       username, password
     })
-      .pipe(tap((user) => { console.log(user) }))
+      .pipe(tap((data) => { console.log(data) }))
   }
 }
