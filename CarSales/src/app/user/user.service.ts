@@ -27,10 +27,10 @@ export class UserService {
         username,
         password,
       })
-      .pipe(
-        tap((data) => {
-          console.log(data);
-        })
-      );
+      
+  }
+
+  logout() {
+    return this.http.get('http://localhost:3000/auth/logout')
   }
 }

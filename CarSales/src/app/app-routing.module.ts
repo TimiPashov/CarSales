@@ -7,13 +7,16 @@ const routes: Routes = [
   { path: 'home', component: WelcomePageComponent },
   {
     path: 'auth',
-    loadChildren: () => import('./user/user.module')
-      .then((m) => m.UserModule)
-  }
+    loadChildren: () => import('./user/user.module').then((m) => m.UserModule),
+  },
+  {
+    path: 'cars',
+    loadChildren: () => import('./cars/cars.module').then((m) => m.CarsModule),
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
