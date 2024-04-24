@@ -1,1 +1,77 @@
-<p>create-car works!</p>
+<form [formGroup]="form" (submit)="create()">
+  <div>
+    <h2>Create Car</h2>
+    <div>
+      <label for="make">Make: </label>
+      <input
+        type="text"
+        placeholder="Merceded"
+        id="make"
+        formControlName="make"
+      />
+    </div>
+    <div>
+      <label for="model">Model: </label>
+      <input
+        type="text"
+        placeholder="CLA 250"
+        id="model"
+        formControlName="model"
+      />
+    </div>
+    <div>
+      <label for="year">Year: </label>
+      <input type="text" placeholder="2020" id="year" formControlName="year" />
+    </div>
+    <div>
+      <label for="used">Used: </label>
+      <input type="text" placeholder="true" id="used" formControlName="used" />
+    </div>
+    <div>
+      <label for="coupe">Coupe: </label>
+      <input
+        type="text"
+        placeholder="Sedan"
+        id="coupe"
+        formControlName="coupe"
+      />
+    </div>
+    <div>
+      <label for="fuelType">Fuel: </label>
+      <input
+        type="text"
+        placeholder="diesel"
+        id="fuelType"
+        formControlName="fuelType"
+      />
+    </div>
+    <div>
+      <label for="description">Description: </label>
+      <input
+        type="text"
+        placeholder="description here..."
+        id="description"
+        formControlName="description"
+      />
+    </div>
+    <div>
+      <label for="price">Price: </label>
+      <input
+        type="text"
+        placeholder="5000"
+        id="price"
+        formControlName="price"
+      />
+    </div>
+    <div>
+      <label for="images">images: </label>
+      <input
+        type="text"
+        placeholder="https://someImgUrl.here"
+        id="images"
+        formControlName="images"
+      />
+    </div>
+    <button>Submit</button>
+  </div>
+</form>
