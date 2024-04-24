@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Car } from '../types/Car';
 
 @Injectable({
   providedIn: 'root',
@@ -20,7 +21,7 @@ export class CarService {
   ) {
     console.log('posting car');
 
-    return this.http.post('http://localhost:3000/cars/', {
+    return this.http.post<Car>('http://localhost:3000/cars/', {
       make,
       model,
       year,
@@ -31,6 +32,10 @@ export class CarService {
       price,
       images,
     });
+  }
+
+  getCar(carId: string | null) {
+    return this.http.get<Car>(`http://localhost:3000/cars/${carId}`);
   }
 
   deleteCar(carId: string) {
