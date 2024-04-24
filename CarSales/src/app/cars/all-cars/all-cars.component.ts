@@ -13,6 +13,12 @@ export class AllCarsComponent implements OnInit {
 
   constructor(private carService: CarService, private router: Router) {}
 
+  deleteCar(carId: string) {
+    this.carService.deleteCar(carId).subscribe(() => {
+      this.carService.getAllCars().subscribe((cars) => (this.cars = cars));
+    });
+  }
+
   ngOnInit(): void {
     this.carService.getAllCars().subscribe((cars) => (this.cars = cars));
   }

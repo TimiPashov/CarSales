@@ -1,5 +1,6 @@
 <ul>
   <li *ngFor="let car of cars">
     <a routerLink="{{ car._id }}">{{ car.make }}</a>
+    <button (click)="deleteCar(car._id)">Delete</button>
   </li>
 </ul>

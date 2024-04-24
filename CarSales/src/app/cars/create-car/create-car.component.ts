@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { CarService } from '../car.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-create-car',
@@ -10,7 +11,8 @@ import { CarService } from '../car.service';
 export class CreateCarComponent {
   constructor(
     private formBuilder: FormBuilder,
-    private carService: CarService
+    private carService: CarService,
+    private router: Router
   ) {}
 
   form = this.formBuilder.group({
@@ -55,6 +57,9 @@ export class CreateCarComponent {
         price!,
         images!
       )
-      .subscribe((data) => console.log(data));
+      .subscribe((data) => {
+        console.log(data);
+        this.router.navigate(['/cars']);
+      });
   }
 }
