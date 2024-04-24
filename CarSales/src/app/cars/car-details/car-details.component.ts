@@ -20,11 +20,8 @@ export class CarDetailsComponent implements OnInit {
   ) {}
 
   deleteCar() {
-    console.log('Deleting Car');
-
     this.carService.deleteCar(this.car._id).subscribe(() => {
-      console.log('Car deleted');
-      this.router.navigate(['/']);
+      this.router.navigate(['/cars']);
     });
   }
 

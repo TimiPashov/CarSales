@@ -6,7 +6,12 @@ import { Car } from '../types/Car';
   providedIn: 'root',
 })
 export class CarService {
+
   constructor(private http: HttpClient) {}
+
+  getAllCars() {
+    return this.http.get<Car[]>('http://localhost:3000/cars/');
+  }
 
   createCar(
     make: string,
