@@ -19,7 +19,7 @@ export class CarService {
     images: string
   ) {
     console.log('posting car');
-    
+
     return this.http.post('http://localhost:3000/cars/', {
       make,
       model,
@@ -31,5 +31,9 @@ export class CarService {
       price,
       images,
     });
+  }
+
+  deleteCar(carId: string) {
+    return this.http.delete(`http://localhost:3000/cars/${carId}`);
   }
 }
